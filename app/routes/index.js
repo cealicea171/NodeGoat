@@ -7,6 +7,7 @@ var MemosHandler = require("./memos");
 
 var ErrorHandler = require("./error").errorHandler;
 
+
 var exports = function(app, db) {
 
     "use strict";
@@ -52,10 +53,10 @@ var exports = function(app, db) {
     // Benefits Page
     app.get("/benefits", isLoggedIn, benefitsHandler.displayBenefits);
     app.post("/benefits", isLoggedIn, benefitsHandler.updateBenefits);
-    /* Fix for A7 - checks user role to implement  Function Level Access Control
+    // Fix for A7 - checks user role to implement  Function Level Access Control
      app.get("/benefits", isLoggedIn, isAdmin, benefitsHandler.displayBenefits);
      app.post("/benefits", isLoggedIn, isAdmin, benefitsHandler.updateBenefits);
-     */
+
 
     // Allocations Page
     app.get("/allocations/:userId", isLoggedIn, allocationsHandler.displayAllocations);
